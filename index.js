@@ -1,7 +1,7 @@
 'use strict';
 
-let _ = require('underscore');
-let Backbone = require('backbone');
+var _ = require('underscore');
+var Backbone = require('backbone');
 
 var fill = function(object, properties, source) {
   for (var i in properties) {

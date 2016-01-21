@@ -1,6 +1,6 @@
 {
   "name": "backbone.component",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Backbone.Component",
   "main": "index.js",
   "scripts": {
@@ -17,10 +17,6 @@
   "author": "Pavel Kondratenko",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.4.5",
-    "babel-eslint": "^4.1.6",
-    "babel-loader": "^6.2.1",
-    "babel-preset-es2015": "^6.3.13",
     "backbone": "^1.2.3",
     "jquery": "^2.2.0",
     "path": "^0.12.7",

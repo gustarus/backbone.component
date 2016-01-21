@@ -19,17 +19,6 @@ module.exports = {
     modulesDirectories: ['node_modules']
   },
 
-  module: {
-    loaders: [{
-      test: /\.js?$/,
-      exclude: path.join(__dirname, 'node_modules'),
-      loader: 'babel-loader',
-      query: {
-        presets: ['es2015']
-      }
-    }]
-  },
-
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
   ]
