@@ -6,7 +6,7 @@ var webpack = require('webpack');
 module.exports = {
 
   entry: {
-    bundle: path.join(__dirname, 'source', 'bundle.js'),
+    bundle: path.join(__dirname, 'index.js'),
     vendor: ['jquery', 'backbone', 'underscore']
   },
 
@@ -16,16 +16,13 @@ module.exports = {
   },
 
   resolve: {
-    modulesDirectories: ['node_modules'],
-    alias: {
-      '@core': path.join(__dirname, 'source')
-    }
+    modulesDirectories: ['node_modules']
   },
 
   module: {
     loaders: [{
       test: /\.js?$/,
-      include: path.join(__dirname, 'source'),
+      exclude: path.join(__dirname, 'node_modules'),
       loader: 'babel-loader',
       query: {
         presets: ['es2015']

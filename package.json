@@ -1,8 +1,8 @@
 {
   "name": "backbone.component",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Backbone.Component",
-  "main": "source/bundle.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dest/* && webpack --progress -p --colors"
