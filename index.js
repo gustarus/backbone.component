@@ -3,21 +3,17 @@
 var _ = require('underscore');
 var Backbone = require('backbone');
 
-var fill = function(object, properties, source) {
-  for (var i in properties) {
-    if (typeof source[properties[i]] !== 'undefined') {
-      object[properties[i]] = source[properties[i]];
+var fill = function(object, properties) {
+  for (var name in properties) {
+    if (typeof object[name] !== 'undefined' && typeof object[name] !== 'function') {
+      object[name] = properties[name];
     }
   }
 };
 
 var Component = Backbone.Component = function(config) {
   this.cid = _.uniqueId('c');
-
-  if (config && this.properties instanceof Array && this.properties.length) {
-    fill(this, this.properties, config);
-  }
-
+  config && fill(this, config);
   this.initialize.call(this, config);
 };
 
