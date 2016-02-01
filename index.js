@@ -3,17 +3,19 @@
 var _ = require('underscore');
 var Backbone = require('backbone');
 
-var fill = function(object, properties, source) {
-  for (var i in properties) {
-    if (typeof source[properties[i]] !== 'undefined') {
-      object[properties[i]] = source[properties[i]];
+var fill = function(object, properties) {
+  for (var name in properties) {
+    if (typeof object[name] !== 'function') {
+      object[name] = properties[name];
+    } else {
+      throw new Error('You can not override the method "' + name + '" via component constructor. For this use "Component.extend()" method.');
     }
   }
 };
 
 var Component = Backbone.Component = function(config) {
   this.cid = _.uniqueId('c');
-  this.properties && this.properties instanceof Array && fill(this, this.properties, config);
+  config && fill(this, config);
   this.configure.apply(this, arguments);
   this.initialize.apply(this, arguments);
 };
