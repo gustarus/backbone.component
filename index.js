@@ -14,7 +14,8 @@ var fill = function(object, properties) {
 var Component = Backbone.Component = function(config) {
   this.cid = _.uniqueId('c');
   config && fill(this, config);
-  this.initialize.call(this, config);
+  this.configure.apply(this, arguments);
+  this.initialize.apply(this, arguments);
 };
 
 if(window) {
