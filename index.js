@@ -13,7 +13,7 @@ var fill = function(object, properties, source) {
 
 var Component = Backbone.Component = function(config) {
   this.cid = _.uniqueId('c');
-  config && typeof this['properties'] === 'array' && fill(this, this['properties'], config);
+  this.properties && this.properties instanceof Array && fill(this, this.properties, config);
   this.configure.apply(this, arguments);
   this.initialize.apply(this, arguments);
 };
