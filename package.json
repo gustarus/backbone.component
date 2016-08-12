@@ -14,7 +14,7 @@
   "keywords": [
     "bacbkone.component"
   ],
-  "author": "Pavel Kondratenko",
+  "author": "Pavel Kondratenko <me@webulla.ru>",
   "license": "ISC",
   "devDependencies": {
     "backbone": "^1.2.3",
