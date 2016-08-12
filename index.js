@@ -3,30 +3,21 @@
 var _ = require('underscore');
 var Backbone = require('backbone');
 
-var Component = Backbone.Component = function(config) {
+var Component = Backbone.Component = function(properties) {
   this.cid = _.uniqueId('c');
-  this.configure.apply(this, arguments);
-  this.initialize.apply(this, arguments);
+  this.configure(properties);
+  this.initialize && this.initialize();
 };
 
-if (window) {
-  !window.Backbone && (window.Backbone = {});
-  window.Backbone.Component = Component;
-}
-
 _.extend(Component.prototype, Backbone.Events, {
-  configure: function(config) {
-    for (var name in config) {
+  configure: function(properties) {
+    for (var name in properties) {
       if (typeof this[name] !== 'function') {
-        this[name] = config[name];
+        this[name] = properties[name];
       } else {
         throw new Error('You can not override the method "' + name + '" via component constructor. For this use "Component.extend()" method.');
       }
     }
-  },
-  
-  initialize: function(config) {
-    return true;
   }
 });
 
