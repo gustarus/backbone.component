@@ -37,3 +37,9 @@ Also you can run this code from console from your project folder.
 ```bash
 node ./node_modules/backbone.component/sample/index.js
 ```
+
+## Installation
+Run this code from your project root folder.
+```bash
+npm i backbone.component --save-dev
+```
