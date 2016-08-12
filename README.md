@@ -9,7 +9,7 @@ You can find this code in [sample folder](https://github.com/gustarus/backbone.c
 ```javascript
 'use strict';
  
-const Component = require('../index');
+const Component = require('backbone.component');
  
 const Person = Component.extend({
   name: null
