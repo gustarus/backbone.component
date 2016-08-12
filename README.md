@@ -2,7 +2,7 @@
 This package describes light version of the [Backbone.Model](http://backbonejs.org/#Model). You can use this component when you doesn't need the Backbone.Model attributes functionality like [model.set()](http://backbonejs.org/#Model-set) or [model.get()](http://backbonejs.org/#Model-get) methods and change events. But this component have all [Backbone.Events](http://backbonejs.org/#Events) functionality.
 
 ## Properties assign functionality
-This component have a properties-assign logic. This means, that when you create the component, you can pass object with properties in first constructor argument. Look at the example below.
+This component have a properties-assign logic. This means, that when you create the component, you can pass object with properties in first constructor argument. Look at the [usage example](#usage-example) below.
 
 ## Usage example
 You can find this code in [sample folder](https://github.com/gustarus/backbone.component/blob/release/v1.0.0/sample/index.js).
