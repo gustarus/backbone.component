@@ -27,7 +27,7 @@ let john = new Man({name: 'John'});
 let kate = new Woman({name: 'Kate'});
  
 john.listenTo(kate, 'want', target => {
-  console.log(`Kate, ${target} is really expensive!`);
+  console.log(`${kate.name}, ${target} is really expensive!`);
 });
  
 kate.want('car');
